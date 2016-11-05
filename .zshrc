@@ -106,7 +106,7 @@ man() {
 
 #{{{ Aliases
 
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt-get update && sudo apt-get -y upgrade'
 
 #}}}
 
