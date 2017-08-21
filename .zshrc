@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/tasdik/.oh-my-zsh
+export ZSH=/home/tasdik/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -110,3 +110,24 @@ alias update='sudo apt-get update && sudo apt-get -y upgrade'
 
 #}}}
 
+# alias
+alias ls="ls -la"
+
+# docker aliases
+function dcleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+
+# adding laravel bin path
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+# mkvirtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
+# autojump source
+# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh]
+source /usr/local/etc/profile.d/autojump.sh
